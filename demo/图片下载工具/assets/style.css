@@ -1,0 +1,79 @@
+@font-face {
+  font-family: Song;
+  src: url(./font.ttf);
+}
+*{
+  margin: 0;
+  padding: 0;
+  font-family: Song;
+}
+h2 {
+  margin-top: 16px;
+  text-align: center;
+}
+.form {
+  margin-top: 16px;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.input-box {
+  padding: 0 16px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.item {
+  /* width: 300px; */
+  margin-right: 16px;
+}
+.item > span {
+  display:inline-block;
+  width: 80px;
+}
+input {
+  margin:  8px;
+  padding: 8px;
+  font-size: 14px;
+}
+button {
+  border-radius: 4px;
+  margin: 8px;
+  font-size: 16px;
+  border-width: 1px;
+  padding: 8px 16px;
+}
+.button-main {
+  background: #00b6ff;
+  border: 1px solid #00b6ff;
+  color: #fff;
+}
+.button-main:active {
+  background: #1cb3ef;
+  border: 1px solid #1cb3ef;
+}
+.canvas-box-disable {
+  position: relative;
+  width: 3508px;
+  height: 2480px;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+#canvas {
+  position: absolute;
+  width: 3508px;
+  height: 2480px;
+  letter-spacing: 2px;
+}
+.pic-box {
+  margin-top: 16px;
+  width: 100%;
+  position: relative;
+  text-align: center;
+}
+.pic {
+  position: relative;
+  width: 45%;
+  height: 100%;
+}

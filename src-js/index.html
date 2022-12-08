@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>贴合滑动</title>
+</head>
+<body>
+  <style>
+    .main {
+      width: 100%;
+      height: 50vh;
+      scroll-snap-type:y mandatory;
+      overflow-y: scroll;
+    }
+    .section {
+      width: 100%;
+      height: 50vh;
+      scroll-snap-align: start;
+    }
+    .c1{
+      background: red;
+    }
+    .c2{
+      background:green;
+    }
+    .c3{
+      background: blue;
+    }
+  </style>
+  <div class="main">
+    <section class="section c1">一</section>
+    <section class="section c2">二</section>
+    <section class="section c3">三</section>
+  </div>
+  <div>
+    .main { <br/>
+      width: 100%; <br/>
+      height: 50vh; <br/>
+      scroll-snap-type:y mandatory; <br/>
+      overflow-y: scroll; <br/>
+    } <br/>
+    .section {  <br/>
+      width: 100%; <br/>
+      height: 50vh; <br/>
+      scroll-snap-align: start; <br/>
+    }
+  </div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<html>
+  <title>demo</title>
+</html>
+<script>
+  // const a
+  // console.log(a)
+  // function f(){
+  //   console.log(msg)
+  // }
+  // var msg = 'hi'
+  // f()
+  function A() {}
+  A.prototype.say = function() {
+    console.log('haha')
+  }
+  const a = new A()
+  // a.__proto__.cry = function () {
+  //   console.log('sdsd')
+  // }
+   a.say = function () {
+    console.log('sdsd')
+  }
+  a.say()
+  console.log(a)
+  const b = new A()
+  b.say()
+  console.log(A.prototype)
+</script>

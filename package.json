@@ -1,0 +1,42 @@
+{
+  "name": "parcel-project",
+  "version": "1.0.0",
+  "source": "src-ts/index.html",
+  "license": "MIT",
+  "scripts": {
+    "serve:k": "parcel src-js/konva-touch.html",
+    "serve:pic": "parcel demo/图片下载工具/index.html",
+    "serve:pic1": "parcel dist/index.html",
+    "build:pic": "parcel build --public-url ./ demo/图片下载工具/index.html",
+    "serve:dist": "parcel distTest/index.html",
+    "serve:pixi": "parcel src-pixi/index.html",
+    "serve:ts": "parcel src-ts/index.html",
+    "serve:demo1": "parcel demo1/index.html",
+    "serve:h265": "parcel h265player-master/demo/demo-mp4.html",
+    "build:ts": "parcel build src-ts/index.html --public-url ./",
+    "serve:js": "parcel src-js/index.html",
+    "build:js": "parcel build src-js/index.html",
+    "serve:vue": "parcel src-vue/index.html",
+    "build:vue": "parcel build src-vue/index.html"
+  },
+  "dependencies": {
+    "goldvideo-player": "^1.0.2",
+    "palette-pixi": "^1.1.0",
+    "picload": "^1.0.1",
+    "pixi.js": "5.3.12",
+    "react": "^16.0.0",
+    "video.js": "^7.20.3",
+    "vue": "^2.6.11",
+    "vue-hot-reload-api": "^2.3.4"
+  },
+  "devDependencies": {
+    "@parcel/transformer-vue": "^2.0.1",
+    "@vue/component-compiler-utils": "^3.3.0",
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "parcel": "^2.0.1",
+    "parcel-bundler": "^1.12.5",
+    "typescript": "^4.7.4",
+    "vue-template-compiler": "^2.6.14"
+  }
+}

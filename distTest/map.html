@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+	<title>1.0版本</title>
+    <script type="text/javascript" charset="UTF-8" src="http://10.69.32.136:30008/api/init.js?v=1.0&appSecret=6f9b1961aea01fee30313a1a9c816181&appKey=ff46af895f622dc3190a2502c8fcef29"></script>    
+	<style type="text/css">  
+	    html{height:100%}    
+	    body{height:100%;margin:0px;padding:0px}    
+	    #map{height:100%}    
+	</style>
+ </head>
+  
+<body>
+	<div id="map"></div>
+	<script type="text/javascript">
+	// 497788.58398463106 499217.1462061403
+        var BNMap = null;
+        var WBNFactory = null, WBNSymbol = null
+		var grap, BNGeometry, BnSymbol
+		var initMap, drawCameraLoc, mapZoomIn, mapZoomOut, getLevel, setLevel, clearPoi
+
+		require(["js/BNSymbol","js/BNUtil","js/BNFactory","js/BNDirectorys","js/jquery-3.2.1.min"],function(BNSymbol,util,BNFactory,BNDirectorys){
+			var grap
+			initMap = function(mapId) {
+				if(BNMap) {
+					BNMap.switchMap(mapId)
+				}else {
+					BNMap=new BNFactory(mapId, {"id":"map", "options":{logo:false,slider:false}});
+					BNGeometry = new BNFactory("BNGeometry", BNMap);
+					BnSymbol = new BNSymbol()
+				}
+				grap = BNMap.creatGraphicsLayer({id: 'demo'})
+				BNMap.addGraphicsLayer(grap)
+				BNMap.bindEvent(null, 'click', function(e) {
+					window.parent['handleMapClick'](e)
+				})
+			}
+			drawCameraLoc = function(cpoint, url, id) {
+				var point = BNGeometry.createPoint(cpoint.x, cpoint.y, BNMap.spatialReference)
+				// var pointSym = BnSymbol.pointSymbol("red", 10)
+				var pointSym = BnSymbol.PictureMarkerSymbol(url, 40, 48).setOffset(0, 24)
+				pointSym.id = id
+				var graphics = BNMap.graphic(point, pointSym)
+				grap.add(graphics)
+			}
+			mapZoomIn = function() {
+				BNMap.zoomIn()
+			}
+			mapZoomOut = function() {
+				BNMap.zoomOut()
+			}
+
+			getLevel = function() {
+				return BNMap.getLevel()
+			}
+
+			setLevel = function() {
+				BNMap.setCenter()
+			}
+
+			clearPoi = function() {
+				BNMap.getGraphicsLayer('demo').clear()
+			}
+			window.parent['iframeOnload']()
+			
+		});
+	</script>
+</body>
+</html>
+

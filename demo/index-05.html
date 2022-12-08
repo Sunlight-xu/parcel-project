@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title></title>
+	<style>
+		*{padding: 0px;margin: 0px;}
+	</style>
+</head>
+<body>
+	<canvas  width="500" height="500"></canvas>
+	<script>
+		let q=document.querySelector("canvas");
+		let w=q.getContext("2d");
+    console.log(w)
+    
+    w.setLineDash([10,10, 5,5,5,10,10, 5,5,5]);
+    w.beginPath()
+		w.moveTo(200,200);
+		w.lineTo(300,200);
+    w.lineTo(300,300);
+    w.closePath()
+		w.stroke();
+
+    w.setLineDash([]);
+    w.beginPath()
+		w.moveTo(20,20);
+		w.lineTo(30,20);
+    w.lineTo(30,30);
+    w.closePath()
+		w.stroke();
+
+
+    w.setLineDash([10, 5]);
+		w.strokeStyle="red";
+    w.strokeRect(10,10,100,100)
+	</script>
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <title>Document</title>
+</head>
+ 
+<body>
+    <div id="app">
+        <div class="allSel">
+            <div class="fang-ge"></div>
+            <el-checkbox v-model="check" @change="onCheck" />全选
+        </div>
+        <div class="block">
+            <!-- <span class="demonstration" style="color:#f54440;">选择指定可配送区域：</span> -->
+            <el-cascader v-model="casVal" placeholder='此处展示已选的省市区' :options="options" :props="props"
+                @change="handleChange" ref="myCascader" clearable>
+            </el-cascader>
+            <!-- 插件里选中的省市区赋值给标签，方便通过js获取 -->
+            <div id="selectCity" style="display: none;" v-text="quchong"></div>
+ 
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js">
+    </script>
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+    <script>
+        var data = [{
+            id: 1,
+            name: '东南',
+            children: [{
+                id: 2,
+                name: '上海',
+                children: [{
+                        id: 3,
+                        name: '普陀'
+                    },
+                    {
+                        id: 4,
+                        name: '黄埔'
+                    },
+                    {
+                        id: 5,
+                        name: '徐汇'
+                    }
+                ]
+            }, {
+                id: 7,
+                name: '江苏',
+                children: [{
+                        id: 8,
+                        name: '南京'
+                    },
+                    {
+                        id: 9,
+                        name: '苏州'
+                    },
+                    {
+                        id: 10,
+                        name: '无锡'
+                    }
+                ]
+            }, {
+                id: 12,
+                name: '浙江',
+                children: [{
+                        id: 13,
+                        name: '杭州'
+                    },
+                    {
+                        id: 14,
+                        name: '宁波'
+                    },
+                    {
+                        id: 15,
+                        name: '嘉兴'
+                    }
+                ]
+            }]
+        }, {
+            id: 17,
+            name: '西北',
+            children: [{
+                id: 18,
+                name: '陕西',
+                children: [{
+                        id: 19,
+                        name: '西安'
+                    },
+                    {
+                        id: 20,
+                        name: '延安'
+                    }
+                ]
+            }, {
+                id: 21,
+                name: '新疆维吾尔族自治区',
+                children: [{
+                        id: 22,
+                        name: '乌鲁木齐'
+                    },
+                    {
+                        id: 23,
+                        name: '克拉玛依'
+                    }
+                ]
+            }]
+        }];
+        var Main = {
+            data() {
+                return {
+                    check: false,
+                    casVal: [],
+                    quchong: [],
+                    props: {
+                        multiple: true,
+                        value: 'id',
+                        label: 'name'
+                    },
+                    options: data
+                };
+            },
+            computed: {
+                allCheckValues() {
+                    var model = []
+ 
+                    function tree2arr(arr, str, level) {
+                        arr.forEach(it => {
+                            let newStr = str.length ? [...str, it.id] : [it.id];
+                            if (it.children) {
+                                tree2arr(it.children, newStr, level + 1)
+                            } else {
+                                model.push(newStr)
+                            }
+                        })
+                    }
+                    tree2arr(this.options, [], 0)
+                    return model
+                },
+            },
+            methods: {
+                onCheck(v) {
+                    this.casVal = v ? this.allCheckValues : []
+                    console.log(this.casVal)
+                },
+                handleChange(value) {
+                    let selectVal = value;
+                    this.allCheckValues.length == selectVal.length ? this.check = true : this.check = false;
+                    console.log(selectVal, '选中的vlaue值')
+                },
+            }
+        };
+        var Ctor = Vue.extend(Main)
+        new Ctor().$mount('#app')
+    </script>
+</body>
+ 
+</html>

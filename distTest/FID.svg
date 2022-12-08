@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40px" height="48px" viewBox="0 0 40 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>FID</title>
+    <defs>
+        <linearGradient x1="0%" y1="0%" x2="100%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#FCE07E" offset="0%"></stop>
+            <stop stop-color="#E14C06" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="0%" y1="0%" x2="100%" y2="100%" id="linearGradient-2">
+            <stop stop-color="#F7C86B" offset="0%"></stop>
+            <stop stop-color="#E5641A" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="114.379649%" id="linearGradient-3">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="FID">
+            <circle id="椭圆形" fill="url(#linearGradient-1)" cx="20" cy="20" r="20"></circle>
+            <text font-family="PingFangSC-Semibold, PingFang SC" font-size="8" font-weight="500" fill="#FAE0C3">
+                <tspan x="14" y="32">FID</tspan>
+            </text>
+            <circle id="椭圆形" fill="url(#linearGradient-2)" cx="19.5" cy="45.5" r="2.5"></circle>
+            <path d="M11.8379981,14.3609808 L27.0075524,23.9684428 L30.0760003,21.9998674 L31.2355094,22.7219616 L27.0075524,25.572177 L17.216,19.689 L18.5704217,20.5509215 L16.1900098,23.5338383 L12.4088627,23.5338383 L12.4088627,26.8986409 L10,28 L10,18.0892445 L12.4088627,18.0892445 L12.4088627,21.4330055 L14.8754594,21.4330055 L15.853,18.87 L10.5257438,15.6684934 L11.8379981,14.3609808 Z M14.0402722,6 L33,18.4967695 L27.0023486,22.7219616 L10,12.1668584 L14.0402722,6 Z" id="形状结合" fill="url(#linearGradient-3)"></path>
+        </g>
+    </g>
+</svg>
