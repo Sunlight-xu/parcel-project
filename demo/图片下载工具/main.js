@@ -6,7 +6,7 @@ var formData = Object.create(null);
 
 function loadImage() {
   var bg = new Image();
-  bg.src = require('./assets/certificate.jpeg');
+  bg.src = require('./assets/certificate.jpg');
   bg.crossOrigin = 'Anonymous';
   bg.onload = function (e) {
     background = bg
@@ -95,14 +95,14 @@ function draw() {
 
   context.font = "normal normal 600 104px Song"
   context.fillStyle = "#2E3441"
-  const x = 895 - formData.name.length * 90
+  const x = 825 - formData.name.length * 90
   context.fillText(formData.name, x, 1420);
 
-  context.fillText(formData.starttime, 1130, 1420);
+  context.fillText(formData.starttime, 1060, 1420);
 
-  context.fillText(formData.endtime, 1900, 1420);
+  context.fillText(formData.endtime, 1820, 1420);
 
-  context.fillText(formData.time, 1060, 1590);
+  context.fillText(formData.time, 1020, 1590);
 
   context.font = "normal normal 600 66px Song"
 
